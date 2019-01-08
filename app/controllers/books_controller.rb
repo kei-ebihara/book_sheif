@@ -26,6 +26,19 @@ class BooksController < ApplicationController
     redirect_to books_path, notice: "書籍を削除しました"
   end
 
+  def edit
+    @book = Book.find(params[:id])
+  end
+
+  def update
+    @book = Book.find(params[:id])
+    if @book.update(book_params)
+      redirect_to @book, notice: "書籍を更新しました。"
+    else
+      render :edit
+    end
+  end
+
   private
 
   def book_params
