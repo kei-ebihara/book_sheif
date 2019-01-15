@@ -8,13 +8,25 @@ ja:
       price: 価格
       price_yen: "¥%{price}"
       publish_date: 発売日
+      category: カテゴリー
       description: 商品の説明
       edit: 編集
       return: 戻る
       delete: 削除
       modal_title: 書籍削除
       question_book: "%{book}を削除しますか？"
-      delete_action: "削除する"
-      chancel: "キャンセル"
+      chancel: キャンセル
+      delete_action: 削除する
+    form:
+      include_blank: カテゴリーを選択して下さい
     index:
       price_yen: "¥%{price}"
+  shared:
+    header:
+      title: BookShelf
+      home: Home
+      new_book: New Book
+      new_registration: 新規登録
+      edit_registration: 設定変更
+      log_out: ログアウト
+      log_in: ログイン

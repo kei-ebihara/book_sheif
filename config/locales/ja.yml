@@ -9,9 +9,15 @@ ja:
         price: 価格
         publish_date: 発売日
         description: 詳細
-        image: 画像
         new_image: 画像
-
+        image: 画像
+        category_id: カテゴリー
+        category: カテゴリー
+      user:
+        email: メールアドレス
+        nick_name: ニックネーム
+        avatar: プロフィール画像
+        password: パスワード
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"
