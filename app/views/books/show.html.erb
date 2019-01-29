@@ -1,5 +1,4 @@
 <div class="col-md-10 offset-md-1 mt-5">
-  <%= render "shared/notice" %>
   <div class="row">
     <div class="col-md-4 mb-4">
     <%= show_book_image @book %>
@@ -17,7 +16,13 @@
   <%= simple_format @book.description %>
 <%= link_to t(".edit"), edit_book_path(@book), class: "btn btn-primary" %>
 <%= button_tag t(".delete"), class: "btn btn-warning", data: { toggle: "modal", target: "#delete-book" } %>
+
+<% if user_signed_in? %>
+  <%= link_to t(".review_new"), new_book_review_path(@book), class: "btn btn-info" %>
+<% end %>
 <%= link_to t(".return"), books_path, class: "btn btn-secondary" %>
+<hr>
+<%= render partial: "reviews/review", collection: @book.reviews %>
 </div>
 
 <div class="modal fade" id="delete-book">

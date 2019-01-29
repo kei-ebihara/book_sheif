@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   def index 
-    @books = Book.all
+    @books = Book.page(params[:page]).per(4)
   end
 
   def new
@@ -43,6 +43,6 @@ class BooksController < ApplicationController
 
   def book_params
     params.require(:book).permit(:title, :price,
-       :publish_date, :description, :new_image)
+      :publish_date, :description, :new_image)
   end
 end
